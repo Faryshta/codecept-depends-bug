@@ -36,4 +36,21 @@ class DependsCest
      {
          expect_that(true);
      }
+
+     /**
+      * @example {"key": true}
+      * @example {"key": false}
+      */
+     public function partial(FunctionalTester $I, Example $e)
+     {
+         expect_that($e['key']);
+     }
+
+     /**
+      * @depends partial
+      */
+     public function full(FunctionalTester $I)
+     {
+         expect_that(true);
+     }
 }
